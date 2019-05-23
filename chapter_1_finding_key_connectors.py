@@ -48,12 +48,20 @@ print(total_connections)
 # average number of connections
 average_connections = total_connections / len(users)    
 
+# Degree Centrality
+# A simple count of the total number of connections linked to a vertex
+# The degree centrality of a node is simply its degree—the number of edges it has. 
+
 # create a list of tuples that have (user_id, number_of_friends)
 num_friends_by_id = [(user["id"], number_of_friends(user)) for user in users]
-
 
 # sort by most friends to least friends
 num_friends_by_id.sort(key=lambda id_and_friends: id_and_friends[1], reverse=True)
 
-
-
+# write a function that determines the count of friends of friends for a user
+# do not count friends of friends that are already friends
+# 
+# output should be:
+# { id_of_friend_of_friend: number_of_connections,
+#   id_of_friend_of_friend: number_of_connectsion,
+#   etc... }
